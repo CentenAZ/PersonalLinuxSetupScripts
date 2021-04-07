@@ -16,6 +16,9 @@ sudo apt install brave-browser -y
 # Install OpenSSH Host
 sudo apt install openssh-server -y
 
+# Install VIM
+sudo apt install vim -y
+
 # OPTIONAL APPLICATIONS
 sudo apt install neofetch -y
 
