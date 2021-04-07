@@ -14,4 +14,11 @@ sudo apt update -y
 sudo apt install brave-browser -y
 
 # OPTIONAL APPLICATIONS
-sudo apt install neofetch bashtop -y
+sudo apt install neofetch -y
+
+sudo apt update -y
+sudo apt install git -y
+git clone https://github.com/aristocratos/bashtop.git
+cd bashtop/
+cd DEB
+sudo ./build
