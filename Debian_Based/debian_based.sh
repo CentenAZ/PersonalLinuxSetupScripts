@@ -13,6 +13,9 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 sudo apt update -y
 sudo apt install brave-browser -y
 
+# Install OpenSSH Host
+sudo apt install openssh-server -y
+
 # OPTIONAL APPLICATIONS
 sudo apt install neofetch -y
 
