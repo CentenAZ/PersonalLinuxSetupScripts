@@ -24,7 +24,7 @@ sudo apt install neofetch -y
 
 sudo apt update -y
 sudo apt install git -y
-git clone https://github.com/aristocratos/bashtop.git
+sudo git clone https://github.com/aristocratos/bashtop.git
 cd bashtop/
 cd DEB
 sudo ./build
