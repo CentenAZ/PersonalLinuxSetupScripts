@@ -11,11 +11,10 @@ lsmod | grep kvm
 lscpu | grep Virtualization
 
 sudo dnf install cockpit cockpit-machines -y
-systemctl status cockpit.socket
 systemctl stop cockpit.socket
-firewall-cmd --add-service=cockpit --permanent
+sudo firewall-cmd --add-service=cockpit --permanent
 
 sudo dnf install qemu-kvm qemu-img libvirt virt-install libvirt-client virt-manager -y
 sudo yum install qemu-kvm libvirt libguestfs-tools virt-install -y
-systemctl enable libvirtd
-systemctl start libvirtd
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
