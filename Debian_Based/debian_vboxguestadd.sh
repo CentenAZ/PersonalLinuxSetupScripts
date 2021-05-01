@@ -1,4 +1,8 @@
 #!/bin/bash
+###################################################
+# DEBIAN BASED DISTROS
+###################################################
+
 
 sudo apt update
 sudo apt install build-essential dkms linux-headers-$(uname -r)
