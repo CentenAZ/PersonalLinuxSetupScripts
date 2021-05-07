@@ -4,6 +4,10 @@
 ###################################################
 # MOUNT GUEST ADDITION BEFORE EXECUTING SCRIPT
 
+echo "\n\n\n       MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       \n\n\n"
+sleep 3s
+
+sudo dnf update -y
 sudo dnf install epel-release -y
 rpm -q epel-release
 sudo dnf install gcc make perl kernel-devel kernel-headers bzip2 dkms -y
