@@ -4,13 +4,8 @@
 ###################################################
 # MOUNT GUEST ADDITION BEFORE EXECUTING SCRIPT
 
-clear
-echo "     MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       "
-sleep 1
-echo "     MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       "
-sleep 1
-echo "     MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       "
-sleep 2
+echo "\n\n\n       MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       \n\n\n"
+sleep 3s
 
 sudo dnf update -y
 sudo dnf install epel-release -y
