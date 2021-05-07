@@ -4,6 +4,7 @@
 ###################################################
 # MOUNT GUEST ADDITION BEFORE EXECUTING SCRIPT
 
+
 echo -e "\n\n\n"
 echo -e "MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM\n"
 sleep 1
