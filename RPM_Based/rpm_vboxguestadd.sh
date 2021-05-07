@@ -6,11 +6,11 @@
 
 clear
 echo "     MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       "
-sleep 1s
+sleep 1
 echo "     MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       "
-sleep 1s
+sleep 1
 echo "     MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM       "
-sleep 2s
+sleep 2
 
 sudo dnf update -y
 sudo dnf install epel-release -y
