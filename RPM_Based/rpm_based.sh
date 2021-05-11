@@ -4,9 +4,8 @@
 ###################################################
 
 
-echo -e "\n\n"
 # Update Software
-echo -e "\nUpdating All Software"
+echo -e "\n\nUpdating All Software"
 sudo dnf update -y
 sudo yum update -y
 echo -e "\nInstalling Extra Packages for Enterprise Linux"
@@ -20,7 +19,7 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser -y
 
 # Install OpenSSH Host
-echo -e "\nInstalling OpenSSH Server/Host"
+echo -e "\nInstalling OpenSSH Server"
 sudo dnf install openssh-server -y
 
 # Install VIM
