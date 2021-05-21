@@ -16,7 +16,7 @@ sleep 2
 echo -e "\n\n**Updating All Software**"
 sudo dnf update -y
 echo -e "\n**Installing Extra Packages for Enterprise Linux**"
-sudo dnf install epel-release -y
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 rpm -q epel-release
 echo -e "\n**Installing Required Packages For Virtualbox Guest Additions**"
 sudo dnf install gcc make perl kernel-devel kernel-headers bzip2 dkms -y

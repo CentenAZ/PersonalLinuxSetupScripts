@@ -9,7 +9,7 @@ echo -e "\n\n**Updating All Software**"
 sudo dnf update -y
 sudo yum update -y
 echo -e "\n**Installing Extra Packages for Enterprise Linux**"
-sudo dnf install epel-release -y
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 
 # Install Brave Browser
 echo -e "\n**Installing The Brave Browser**"
