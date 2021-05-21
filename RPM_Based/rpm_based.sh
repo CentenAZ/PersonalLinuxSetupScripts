@@ -37,3 +37,7 @@ cd /tmp
 git clone https://github.com/aristocratos/bashtop.git
 cd bashtop
 sudo make install
+
+echo -e "\n**Installing Flatpak**"
+sudo dnf install flatpak -y
+echo "INSTALL THE FLATPAK RESPOSITORY AT https://flatpak.org/setup/"
