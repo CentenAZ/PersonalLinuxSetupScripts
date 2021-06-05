@@ -9,7 +9,7 @@ sleep 1
 echo -e "MAKE SURE THAT THE VIRTUALBOX GUEST ADDITIONS DISK IMAGE IS INSERTED INTO THE VM \n\n\n"
 sleep 2
 
-sudo yum install epel-release
+sudo yum install epel-release -y
 sudo yum install gcc make perl kernel-devel kernel-headers bzip2 dkms -y
 
 echo -e "\n**Mounting and Executing Virtualbox Guest Additions Setup Disc**"
