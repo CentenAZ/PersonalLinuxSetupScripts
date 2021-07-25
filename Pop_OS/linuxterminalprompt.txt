@@ -1,0 +1,4 @@
+Customizing the Linux Terminal Prompt
+Go to the ~ directory, add the line below to the end of the .bashrc file
+
+PS1="\e[36m┌──(\e[m\e[34m\u@\H\e[m\e[36m)-[\e[m\e[34m\w\e[m\e[36m]\n└─\e[m\e[1m\$\e[m "
