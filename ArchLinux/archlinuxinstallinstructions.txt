@@ -1,0 +1,63 @@
+//////////////////////////////////////////////////////
+INSTALLING ARCH LINUX
+[] means a user preference
+//////////////////////////////////////////////////////
+
+
+ls /sys/firmware/efi/efivars
+
+ping 8.8.8.8
+
+timedatectl set-ntp true
+
+fdisk -l
+fdisk /dev/[drive_to_be_formatted]
+    n: new partition
+    t: assign partition type
+    m: help
+    w: save and apply changes
+        Partition 1: EFI system partition, >300MB, (excluse if in BIOS mode)
+        Partition 2: swap, >512MB
+        Partition 3: root
+
+mkfs.[format] /dev/[root_partition]
+    ext4
+    ext3
+    btrfs
+mkswap /dev/[swap_partition]
+mkfs.fat -F32 /dev/[efi_partition]
+mount /dev/[root_partition] /mnt
+swapon /dev/[swap_partition]
+
+pacstrap /mnt base linux linux-firmware vim nano
+pacstrap /mnt git vim
+
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+
+timedatectl set-timezone [Region/City]
+ln -sf /usr/share/zoneinfo/[Region]/[City] /etc/localtime
+hwclock --systohc
+
+locale-gen
+(Uncomment "LANG=en_US.UTF-8" in /etc/locale.gen by removing the # at the beginning of the line)
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+export LANG=en_US.UTF-8
+
+echo [hostname] > /etc/hostname
+
+mkinitcpio -P
+passwd
+
+pacman -S grub efibootmgr dosfstools os-prober mtools
+mkdir /boot/efi
+mount /dev/[efi_partition] /boot/efi
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+pacman -S networkmanager sudo
+systemctl enable NetworkManager
+
+exit
+umount -l /mnt
