@@ -1,0 +1,11 @@
+//////////////////////////////////////////////////////
+CREATING A ROOT USER IN ARCH LINUX
+[] means a user preference
+//////////////////////////////////////////////////////
+
+
+pacman -S sudo
+useradd --create-home [user]
+passwd [user]
+usermod --append --groups wheel [user]
+(Remove the comment at the line where "%wheel ALL=(ALL) ALL" in /etc/sudoers)
