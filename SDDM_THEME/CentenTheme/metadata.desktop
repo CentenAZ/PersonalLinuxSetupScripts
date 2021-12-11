@@ -1,11 +1,11 @@
 [SddmGreeterTheme]
 Name=CentenTheme
-Description=Centen's SDDM Theme, based off of Eliver Lara's original theme
-Author=Vincent Nguyen
+Description=Centen's SDDM theme
+Author=CentenAZ
 Copyright=
 License=GPL 3+
 Type=sddm-theme
-Version=0.1
+Version=1.0
 Website=
 Screenshot=preview.png
 MainScript=Main.qml
