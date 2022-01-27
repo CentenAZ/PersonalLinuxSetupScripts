@@ -16,7 +16,7 @@ fdisk /dev/[drive_to_be_formatted]
     t: assign partition type
     m: help
     w: save and apply changes
-        Partition 1: EFI system partition, >300MB, (excluse if in BIOS mode)
+        Partition 1: EFI system partition, >+300MB, (excluse if in BIOS mode)
         Partition 2: swap, >512MB
         Partition 3: root
 
@@ -30,7 +30,7 @@ mount /dev/[root_partition] /mnt
 swapon /dev/[swap_partition]
 
 pacstrap /mnt base linux linux-firmware vim nano
-pacstrap /mnt git vim
+pacstrap /mnt git
 
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
