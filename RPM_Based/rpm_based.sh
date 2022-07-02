@@ -27,14 +27,18 @@ echo -e "\n**Installing VIM**"
 sudo dnf install vim -y
 
 # OPTIONAL APPLICATIONS
-echo -e "\n**Installing Neofetch**"
-sudo dnf install neofetch -y
 echo -e "\n**Installing Make**"
 sudo dnf install make -y
 
+echo -e "\n**Installing Neofetch**"
+cd /usr/local/bin
+sudo git clone https://github.com/dylanaraps/neofetch
+cd neofetch
+sudo make install
+
 echo -e "\n**Installing Bashtop**"
-cd /tmp
-git clone https://github.com/aristocratos/bashtop.git
+cd /usr/local/bin
+sudo git clone https://github.com/aristocratos/bashtop.git
 cd bashtop
 sudo make install
 
