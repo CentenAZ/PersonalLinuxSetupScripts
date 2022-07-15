@@ -9,7 +9,7 @@ echo -e "\n\n**Updating All Software**"
 sudo dnf update -y
 sudo yum update -y
 echo -e "\n**Installing Extra Packages for Enterprise Linux**"
-sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
+sudo dnf install epel-release -y
 
 # Install Brave Browser
 echo -e "\n**Installing The Brave Browser**"
@@ -30,15 +30,13 @@ sudo dnf install vim -y
 echo -e "\n**Installing Make**"
 sudo dnf install make -y
 
-echo -e "\n**Installing Neofetch**"
-cd /usr/local/bin
-sudo git clone https://github.com/dylanaraps/neofetch
+echo -e "\n**Installing Neofetch and Bashtop**"
+cd /tmp
+sudo git clone https://github.com/dylanaraps/neofetch.git
+sudo git clone https://github.com/aristocratos/bashtop.git
 cd neofetch
 sudo make install
-
-echo -e "\n**Installing Bashtop**"
-cd /usr/local/bin
-sudo git clone https://github.com/aristocratos/bashtop.git
+cd /tmp
 cd bashtop
 sudo make install
 
