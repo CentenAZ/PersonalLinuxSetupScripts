@@ -19,7 +19,7 @@ echo -e "\n**Installing Extra Packages for Enterprise Linux**"
 sudo dnf install epel-release -y
 rpm -q epel-release
 echo -e "\n**Installing Required Packages For Virtualbox Guest Additions**"
-sudo dnf install gcc make perl kernel-devel kernel-headers bzip2 dkms -y
+sudo dnf install dkms kernel-devel kernel-headers gcc make bzip2 perl elfutils-libelf-devel -y
 
 echo -e "\n**Mounting and Executing Virtualbox Guest Additions Setup Disc**"
 sudo mkdir -p /mnt/vboxadd
