@@ -56,7 +56,17 @@ Chrome/Brave: https://chrome.google.com/webstore/detail/gnome-shell-integration/
 - https://extensions.gnome.org/extension/307/dash-to-dock/
 - https://extensions.gnome.org/extension/1460/vitals/
 ### Gnome Configurations
-
+#### Binding Ctrl + Alt + T to open terminal
+`Settings` > `Keyboard` > `View and Customize Shortcuts` > `Custom Shortcuts` > `Add Shortcut`
+#### Configuring the time display
+`Settings` > `Date & Time` > **Time Format: AM/PM**
+#### Configuring Blur my Shell
+`Extension List` > `Blur my Shell Settings` > **Sigma=10, Brightness=0.65,Color and noise effects=True, Panel blur=True, Static blur=True, Disable when a window is near=True, Background blue=True, Overview components style=Transparent, Application folder blur=True, Dash to Dock blur=False, Application blur=False, Lockscreen blur=True**
+#### Configuring Dash to Dock
+`Extension List` > `Dash to Dock Settings` > **Show on all monitors=True, Intelligent autohide=True, Show trashcan=False, Show overview on startup=False, Customize the dash color=True:black, Customize opacity=Fixed:75%**
+#### Configuring Vitals
+`Extension List` > `Vitals Settings` > **Position in panel=Center, Use higher precision=True**
+`Vitals Extension` > Add **CPU: Usage, Frequency | Memory: Usage, Free | Storage: Free | Network: Public IP, Device rx**
 ### Install Brave
 ```
 sudo dnf install dnf-plugins-core
@@ -74,7 +84,7 @@ sudo dnf install btop
 ```
 ### Install Virtualbox
 ```
-sudo dnf -y install kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
+sudo dnf install kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
 ```
 ```
 cat <<EOF | sudo tee /etc/yum.repos.d/virtualbox.repo 
