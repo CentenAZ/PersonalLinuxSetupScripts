@@ -24,7 +24,7 @@ sudo lvextend -r -l +100%FREE /dev/mapper/fedora*
 # Installing and changing default shell to zsh
 echo "-----INSTALLING AND CHANGING DEFAULT SHELL TO ZSH AND CUSTOMIZING IT-----"
 sudo dnf install zsh util-linux-user -y
-sudo chsh -s $(which zsh) $()
+chsh -s $(which zsh)
 
 ################ post installation not ready yet
 mkdir ~/.zsh

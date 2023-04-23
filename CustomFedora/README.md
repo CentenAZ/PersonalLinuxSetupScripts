@@ -11,7 +11,7 @@ https://fedoraproject.org/
 ```
 sudo dnf update
 ```
-### Installing GNOME
+### Installing GNOME (reboot when completed)
 ```
 sudo dnf install @base-x gnome-shell gnome-terminal nautilus firefox gnome-browser-connector gnome-tweaks @development-tools
 sudo systemctl set-default graphical.target
@@ -20,6 +20,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 ### Installing Extra Dependencies
 ```
 sudo dnf group install "Hardware Support"
+sudo dnf install git make vim nano
 ```
 
 ## OS Configuration
@@ -27,10 +28,10 @@ sudo dnf group install "Hardware Support"
 ```
 sudo lvextend -r -l +100%FREE /dev/mapper/fedora*
 ```
-### Installing/Setting Up zsh
+### Installing/Setting Up zsh (reboot when completed)
 ```
 sudo dnf install zsh util-linux-user
-sudo chsh -s $(which zsh) $()
+chsh -s $(which zsh)
 mkdir ~/.zsh
 cp ~/.zshrc ~/.zshrc.bak
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -39,6 +40,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" | tee -a ~/.zshrc
+```
+#### Zsh Theme
+```
+ZSH_THEME="jonathan"
 ```
 
 ## Miscellaneous
@@ -50,10 +55,38 @@ Chrome/Brave: https://chrome.google.com/webstore/detail/gnome-shell-integration/
 - https://extensions.gnome.org/extension/3193/blur-my-shell/
 - https://extensions.gnome.org/extension/307/dash-to-dock/
 - https://extensions.gnome.org/extension/1460/vitals/
+### Gnome Configurations
+
 ### Install Brave
 ```
 sudo dnf install dnf-plugins-core
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser
+```
+### Install Neofetch
+```
+sudo dnf install neofetch
+```
+### Install Bashtop/Btop
+```
+sudo dnf install btop
+```
+### Install Virtualbox
+```
+sudo dnf -y install kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
+```
+```
+cat <<EOF | sudo tee /etc/yum.repos.d/virtualbox.repo 
+[virtualbox]
+name=Fedora \$releasever - \$basearch - VirtualBox
+baseurl=http://download.virtualbox.org/virtualbox/rpm/fedora/\$releasever/\$basearch
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://www.virtualbox.org/download/oracle_vbox.asc
+EOF 
+```
+```
+sudo dnf install VirtualBox-7.0 
 ```
